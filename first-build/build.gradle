@@ -1,0 +1,10 @@
+ext.person = 'Neeraj'
+task hello_world {
+	doLast {
+		println "Hello $person"
+	}
+}
+task hello_world_variant(dependsOn: 'hello_world') << {
+	println 'Hello world variant'
+}
+
