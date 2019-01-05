@@ -1,0 +1,7 @@
+task firstTask {
+	ext.property_1 = "someValue"
+}
+
+task anotherTask {
+	println firstTask.property_1
+}

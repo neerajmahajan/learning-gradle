@@ -1,0 +1,17 @@
+task hello << {
+	println 'Hello << is doLast alias'
+}
+
+hello.doFirst {
+	println 'Hello this will be executed at the beginning of hello task'
+	}
+hello.doLast {
+	println 'Hello this is another execution step of hello task that will be executed at last'
+}
+
+hello << {
+	println 'Hello, This is another doLast step of hello task'
+	println 'If multiple doLast are associated with a task, then they will be executed in the sequence order'
+}
+
+
