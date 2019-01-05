@@ -173,7 +173,20 @@
    map.collect {key,value -> key * value} // print [a,bb,ccc]
   ```
   
+  * REST API CALL example
   
+  ```
+  String base = 'https://maps.googleapis.com/maps/api/geocode/xml'
+  def encoded = ['12 Hight Street', 'Southampton','UK']
+       .collect {URLEncoder.encode(it, 'UTF-8')}
+       .join(',')
+       
+  String qs = "address=$encoded"
+  def xmlRoot = new XmlSlurper().parse("$base$qs")
+  def loc = root.result[0].geometry.location
+  println "(${loc.lat}, ${loc.lng})") 
+  
+  ```
   
   
   
