@@ -15,20 +15,44 @@
      String name = 'Neeraj'
      println 'Hello ${name}'     
     ```
+* Less import statments required. because it automatically inlucdes lot of java. packages by default.
+* 
     
   ###### POGO similar to POJO in java, but with extra features
   * by default instance variables are private by default.
   * by default methods are public by default.
   * We don't need to provide setter method in a class. They are automatically available.
+   * However if we specify either private or public with variables, then setter or getters method will not be auto generated.
+  * We don't need to put **return** keyword at the end of method. It will automatically return;
   
   ```
   class Person {
    String first
    String last
   } 
-  Person p = new Person()
-  p.setFirst('Neeraj') // setter method is provided internally bu groovy.
-  p.last = 'Mahajan'   // last variable is private so not accessible. but internally groovy is calling a setter method.
-  println "${p.getFirst()} ${p.last}" // again p.last is actually calling getter method. 
+     Person p = new Person()
+  Or Person p = new Person(first: 'Neeraj' , last: 'Mahajan') // This statement will use the default constructor and will call the getters.
+  
+     p.setFirst('Neeraj') // setter method is provided internally by groovy.
+     p.last = 'Mahajan'   // last variable is private so not accessible. but internally groovy is calling a setter method.
+     println "${p.getFirst()} ${p.last}" // again p.last is actually calling getter method. 
   
   ```
+  
+  * If we use below @ToString annotation, it will automatically provide toString method implementation
+  ```
+  import groovy.transform.*
+  @ToString(includeNames=true) // Abstract Syntaxt tree transformation 
+  // Or @ToString() // This will not include properties name in the output
+  class Person {
+   String first
+   String last
+  } 
+    
+  Person p = new Person(first: 'Neeraj' , last: 'Mahajan')
+  println p
+  
+  ```
+  
+  
+  
