@@ -7,7 +7,7 @@
      String name = 'Neeraj'
      def name2 = 'Ram'  // We can either use specific data type or simply def
      println "Hello ${name}"
-     println "Hello $name2"
+     println "Hello $name2" // We can either use ${variableName} or simply $variableName
     ```
     * Below code snippet will print Hello ${name}
     ```
