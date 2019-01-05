@@ -25,10 +25,10 @@
   class Person {
    String first
    String last
- }
- 
- Person p = new Person()
- p.setFirst('Neeraj') // setter method is provided internally bu groovy.
- p.last = 'Mahajan'   // last variable is private so not accessible. but internally groovy is calling a setter method.
- println "${p.getFirst()} ${p.last}" // again p.last is actually calling getter method. 
+  } 
+  Person p = new Person()
+  p.setFirst('Neeraj') // setter method is provided internally bu groovy.
+  p.last = 'Mahajan'   // last variable is private so not accessible. but internally groovy is calling a setter method.
+  println "${p.getFirst()} ${p.last}" // again p.last is actually calling getter method. 
+  
   ```
