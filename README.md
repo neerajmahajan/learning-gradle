@@ -195,7 +195,7 @@
   
   #### Creating a java based project structure from gradle tool
   
-  * gradle init --type java-library
+  * gradle init --type java-library // https://guides.gradle.org/building-java-applications/ gradle init --type java-application
   
   
   
