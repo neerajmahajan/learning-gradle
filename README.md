@@ -125,13 +125,55 @@
    for(int i=0;i++;i<nums.size) {println nums[i]};
    for(Integer i : nums) {println nums[i]}
    for(i in nums) {println nums[i]}
-   nums.each {println it} // Using Closure // Be deault it is the default name
-   nums.each {x -> println x}
+   nums.each {println it} // Using Closure // Be deault it is the default name // By defaul All closure has 1 argument ????
+   nums.each {x -> println x}  // each method also returns the collection at end
    nums.eachWithIndex {n,index ->
     println "nums[$indez] $i"
    }
-     
+    
   ```
+  
+  * Doubling the value of collection
+  
+  ```
+   // This approach is not recommended
+    def nums = [1,2,3,4,5]
+    def doublesNumber = []
+    nums.each {doublesNumber << it * 2} // << appends to the collection. // we can modify the external varibale like doublesNumber
+  ```
+  * Recommneded approach
+  ```
+   // Recommneded approach
+    def nums = [1,2,3,4,5]
+    def doubleNumbers = nums.collect { it * 2} // collect is like a map in java // It applies the function on each collection variable and returns the new transformed collection.
+  ```
+  
+  * Functions MFR - Map - Filter - Reduce example
+  
+  ```
+   // Here collect is map, findAll is like filter and sum is like the reduce operation
+    def nums = [1,2,3,4,5]
+    println nums.collect { it * 2} .findAll {it % 2 == 0 } .sum()    
+    
+  ```
+  * Map example
+  ```
+   def map = [a:1,b:2,c:3]
+   println map               // [a:1,b:2,c:3]
+   println map.keySet()      // [a,b,c]
+   println map.values()      // [1,2,3]
+   println map.entrySet()    // [a=1,b=2,c=3]
+   
+   map.d = 4                 // Add new Key value
+   map['e'] = 5              // Add new Key value
+   map.put('f',6)
+   
+   map.each {e ->  println "${e.key} === ${e.value}"}
+   map.each {key,value -> println "$key === $value" }
+   map.collect {key,value -> key * value} // print [a,bb,ccc]
+  ```
+  
+  
   
   
   
