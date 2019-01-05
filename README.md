@@ -78,5 +78,65 @@
   println persons.size()
   
   ```
+  ###### Collections
+  
+  * Array List
+  
+  ```
+   def nums = [3,1,4,1,5,9]
+   print nums  // output [3,1,4,1,5,9]
+   print nums.class.name // Is actually nums.getClass().getName() // java.util.ArrayList
+     
+  ```
+  
+  * Linked List
+  
+  ```
+   def nums = [3,1,4,1,5,9] as LinkedList
+   print nums  // output [3,1,4,1,5,9]
+   print nums.class.name // Is actually nums.getClass().getName() // java.util.LinkedList
+     
+  ```
+  
+  * Set
+  
+  ```
+   def nums = [3,3,4,4,5,5] as Set
+   print nums  // output [3,4,5]
+   print nums.class.name // Is actually nums.getClass().getName() // java.util.LinkedHashSet
+     
+  ```
+  
+  * SortedSet
+  
+  ```
+   def nums = [8,7,3,3,4,4,5,5] as SortedSet
+   print nums  // output [3,4,5,7,8]
+   print nums.class.name // Is actually nums.getClass().getName() // java.util.TreeSet
+     
+  ```
+  
+  * Iterating Collections
+  
+  ```
+   def nums = [3,1,4,1,5,9]
+   print nums  // output [3,1,4,1,5,9]
+   
+   for(int i=0;i++;i<nums.size) {println nums[i]};
+   for(Integer i : nums) {println nums[i]}
+   for(i in nums) {println nums[i]}
+   nums.each {println it} // Using Closure // Be deault it is the default name
+   nums.each {x -> println x}
+   nums.eachWithIndex {n,index ->
+    println "nums[$indez] $i"
+   }
+     
+  ```
+  
+  
+  
+  
+  
+  
   
   
