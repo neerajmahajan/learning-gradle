@@ -189,6 +189,13 @@
   ```
   
   
+  ##### Gradle build instructions
+  
+  * **apply plugin: 'java'** // Here apply is method call from POGO class, plugin is a property in POGO and 'java' is the value for the argument.
+  
+  #### Creating a java based project structure from gradle tool
+  
+  * gradle init --type java-library
   
   
   
