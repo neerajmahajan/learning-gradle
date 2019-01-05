@@ -1,7 +1,7 @@
 # learning-gradle
 * checking the version
   * gradle -v
-###### Groovy Basics
+##### Groovy Basics
 * String can be put in either '' or "" "", String puts in '' are java string whereas string puts in "" "" are groovy strings. string interpolation will not work in java string. see eg belows
     * Below code snippet will print Hello Neeraj
     ```
@@ -16,9 +16,15 @@
      println 'Hello ${name}'     
     ```
 * Less import statments required. because it automatically inlucdes lot of java. packages by default.
-* 
+* @ToString(includeNames=true) 
+ * Generates toString method implementation
+* @EqualsAndHashCode
+ * Generated equals and hash code method implementaion taking the instance variables
+* @TupleConstructor
+ * Generates constructor method implementation taking all instance variables.
+* @Canonical includes @ToString, @EqualsAndHashCode, @TupleConstructor
     
-  ###### POGO similar to POJO in java, but with extra features
+###### POGO similar to POJO in java, but with extra features
   * by default instance variables are private by default.
   * by default methods are public by default.
   * We don't need to provide setter method in a class. They are automatically available.
@@ -53,6 +59,24 @@
   println p
   
   ```
+  * Set Example
+  ```
+  import groovy.transform.*
+  @Canonical  
+  class Person {
+   String first
+   String last
+  } 
+    
+  Person p = new Person(first: 'Neeraj' , last: 'Mahajan')
+  Person p1 = new Person('Neeraj','Mahajan')
+  println p
+  println p1
+  println p == p1
   
+  Set persons = [p,p1]
+  println persons.size()
+  
+  ```
   
   
