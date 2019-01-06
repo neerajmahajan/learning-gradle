@@ -190,7 +190,7 @@
   
   
   ##### Gradle build instructions
-  
+  * Gradle tasks are equal to Maven phases
   * **apply plugin: 'java'** // Here apply is method call from POGO class, plugin is a property in POGO and 'java' is the value for the argument.
   
   #### Creating a java based project structure from gradle tool
